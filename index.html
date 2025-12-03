@@ -1,43 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        h1 {
-            color: #007acc;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s;
-        }
-        a:hover {
-            border-bottom: 1px solid #007acc;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rabbani Munna | Cybersecurity & Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    /* Reset & Basic Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; }
+    a { color: #007acc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+
+    /* Header */
+    header { background-color: #007acc; color: white; text-align: center; padding: 80px 20px; }
+    header h1 { font-size: 3em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; max-width: 700px; margin: auto; }
+
+    /* Badges */
+    .badges img { margin: 5px 5px 5px 0; }
+
+    /* Sections */
+    h2 { font-size: 2em; color: #007acc; margin-bottom: 20px; border-bottom: 2px solid #007acc; display: inline-block; padding-bottom: 5px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    table td, table th { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    table th { background-color: #007acc; color: white; }
+    ul { list-style: disc inside; }
+    .tools, .certifications { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 20px; background-color: #007acc; color: white; margin-top: 40px; }
+</style>
 </head>
 <body>
-    <h1>Welcome to My Project!</h1>
-    <p>This is a simple GitHub Pages website.</p>
-    <p>Check out the project repository: 
-        <a href="https://github.com/your-username/your-repo-name" target="_blank">GitHub Repo</a>
-    </p>
+
+<!-- Header -->
+<header>
+    <h1>Rabbani Munna</h1>
+    <p>Cybersecurity Enthusiast & Computer Science Student | Hands-on Security, Python Automation, Threat Analysis</p>
+    <div class="badges">
+        <a href="https://linkedin.com/in/maqrabbani"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+    </div>
+</header>
+
+<!-- Objective -->
+<section id="objective">
+    <h2>Objective</h2>
+    <p>My journey in computer science has led me to develop a passion for cybersecurity, and I am eager to join a Security Operations Center (SOC) as a Tier 1 Analyst.</p>
+</section>
+
+<!-- Data Analysis Skills -->
+<section id="data-skills">
+    <h2>Data Analysis Skills</h2>
+    <table>
+        <tr>
+            <th>Skill</th>
+            <th>Associated Projects</th>
+        </tr>
+        <tr>
+            <td>Python for Data Analysis</td>
+            <td>
+                <a href="https://github.com/maqrabbani/worldquant">WorldQuant Data Labs</a>,
+                <a href="https://github.com/maqrabbani/amazon-people-analytics">Amazon People Analytics</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Data Cleaning & Preprocessing</td>
+            <td><a href="https://github.com/maqrabbani/amazon-people-analytics">Extern.com Data Analysis Tasks</a></td>
+        </tr>
+        <tr>
+            <td>Exploratory Data Analysis (EDA)</td>
+            <td><a href="https://github.com/maqrabbani/worldquant">WQU Analytics Projects</a></td>
+        </tr>
+        <tr>
+            <td>Pandas & NumPy</td>
+            <td><a href="https://github.com/maqrabbani/worldquant">WorldQuant Deep Learning Fundamentals</a></td>
+        </tr>
+        <tr>
+            <td>SQL (Joins, Filtering, Aggregations)</td>
+            <td><a href="https://github.com/maqrabbani/amazon-people-analytics">Practice Datasets & Assignments</a></td>
+        </tr>
+        <tr>
+            <td>Data Visualization (Matplotlib & Seaborn)</td>
+            <td><a href="https://github.com/maqrabbani/amazon-people-analytics">Amazon People Analytics</a></td>
+        </tr>
+        <tr>
+            <td>Data Pipeline</td>
+            <td><a href="https://github.com/maqrabbani/applied-ai-lab/">Deep Learning Lab</a></td>
+        </tr>
+    </table>
+</section>
+
+<!-- Cybersecurity Skills -->
+<section id="cyber-skills">
+    <h2>Cybersecurity Skills</h2>
+    <table>
+        <tr><th>Skill</th><th>Associated Projects</th></tr>
+        <tr><td>SIEM Implementation & Log Analysis</td><td><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">Boss of the SOC</a>, <a href="https://github.com/maqrabbani/Detection-Lab/tree/main">GetPDF</a></td></tr>
+        <tr><td>Network Traffic Monitoring & Attack Detection</td><td><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">PacketDetective</a></td></tr>
+        <tr><td>Security Automation with Shuffle SOAR</td><td><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">SOAR alert enrichment</a></td></tr>
+        <tr><td>Incident Response Planning & Execution</td><td><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">Amadey</a>, <a href="https://github.com/maqrabbani/Detection-Lab/tree/main">Rhysida</a></td></tr>
+        <tr><td>Case Management with TheHive</td><td><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">SOC case triage</a></td></tr>
+        <tr><td>Scripting & Automation for Threat Mitigation</td><td><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">Threat hunting automation</a></td></tr>
+    </table>
+</section>
+
+<!-- Tools -->
+<section id="tools">
+    <h2>Tools</h2>
+    <h3>Network</h3>
+    <div class="tools">
+        <img src="https://img.shields.io/badge/-Wireshark-1679A7?&style=for-the-badge&logo=Wireshark&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Suricata-EF3B2D?&style=for-the-badge&logo=Suricata&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Zeek-777BB4?&style=for-the-badge&logo=Zeek&logoColor=white" />
+    </div>
+    <h3>Endpoint</h3>
+    <div class="tools">
+        <img src="https://img.shields.io/badge/-Microsoft_Defender_for_Endpoint-00A4EF?&style=for-the-badge&logo=Microsoft&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Velociraptor-4B275F?&style=for-the-badge&logo=Velociraptor&logoColor=white" />
+    </div>
+    <h3>SIEM</h3>
+    <div class="tools">
+        <img src="https://img.shields.io/badge/-Microsoft_Sentinel-0078D4?&style=for-the-badge&logo=Microsoft&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Elastic-005571?&style=for-the-badge&logo=Elastic&logoColor=white" />
+    </div>
+    <h3>Cloud</h3>
+    <div class="tools">
+        <img src="https://img.shields.io/badge/-Microsoft_Azure-0078D4?&style=for-the-badge&logo=Microsoft-Azure&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Amazon_AWS-232F3E?&style=for-the-badge&logo=Amazon-AWS&logoColor=white" />
+    </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+        <img src="https://img.shields.io/badge/-IBM_Data_Science-0072C6?&style=for-the-badge&logo=IBM&logoColor=white" />
+        <img src="https://img.shields.io/badge/-Google_Cybersecurity-4285F4?&style=for-the-badge&logo=Google&logoColor=white" />
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li><a href="https://github.com/maqrabbani/Detection-Lab/tree/main">Detection Lab</a></li>
+        <li>SOC Automation Project</li>
+    </ul>
+</section>
+
+<!-- Udemy Courses -->
+<section id="courses">
+    <h2>My Udemy Courses</h2>
+    <table>
+        <tr>
+            <td align="center">
+                <a href="https://www.udemy.com/course/learn-python-programming-with-chatgpt/" target="_blank">
+                    <img src="img/python.webp" alt="Learn Python Programming with ChatGPT" width="260" /><br>
+                    <b>Learn Python Programming with ChatGPT</b>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://www.udemy.com/course/linux-for-cloud-engineers-and-devops/" target="_blank">
+                    <img src="img/linux.webp" alt="Linux for Cloud Engineers and DevOps" width="260" /><br>
+                    <b>Linux for Cloud Engineers and DevOps</b>
+                </a>
+            </td>
+        </tr>
+    </table>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Rabbani Munna | <a href="https://github.com/maqrabbani" style="color:white;">GitHub</a>
+</footer>
+
 </body>
 </html>

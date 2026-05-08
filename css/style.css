@@ -1006,6 +1006,46 @@ body{
             text-align: center;
             padding-top: 30px;
         }
+        /* --- DROPDOWN MENU --- */
+.header .navbar ul li.dropdown {
+    position: relative;
+}
+
+.header .navbar ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    padding: 1rem 0;
+    min-width: 22rem;
+    flex-direction: column; /* Overrides the horizontal menu style */
+}
+
+/* Show the menu when hovering */
+.header .navbar ul li.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.header .navbar ul li .dropdown-menu li {
+    margin: 0;
+    width: 100%;
+}
+
+.header .navbar ul li .dropdown-menu li a {
+    color: #333; /* Dark text for the white dropdown box */
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    display: block;
+}
+
+.header .navbar ul li .dropdown-menu li a:hover {
+    background: #f2f2f2;
+    color: #00bfff; /* Matriq Blue */
+    text-decoration: none;
+}
         
         @media (min-width: 768px) {
             .footer .credit {
@@ -1387,4 +1427,16 @@ body{
         .faq .row .accordion-container{
             width: 100%;
         }
+        /* Mobile Dropdown Fixes */
+    .header .navbar ul li .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 2rem;
+    }
+    
+    .header .navbar ul li .dropdown-menu li a {
+        color: grey;
+        font-size: 2rem;
+    }
 }

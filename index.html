@@ -210,7 +210,6 @@
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 <script>
   $(document).ready(function(){
-    // Adding a tiny delay ensures the browser has time to download the logos first
     setTimeout(function() {
         $(".platforms-carousel").owlCarousel({
           autoplay: true,
@@ -218,9 +217,9 @@
           loop: true,
           margin: 30,
           responsive: {
-            0: { items: 1 },       
-            768: { items: 2 },     
-            1000: { items: 3 }     
+            0: { items: 1 },       /* 1 logo on phones */
+            768: { items: 2 },     /* 2 logos on tablets */
+            1000: { items: 4 }     /* 4 big logos on desktop! */
           }
         });
     }, 200); 

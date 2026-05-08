@@ -114,7 +114,7 @@ body{
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.5rem; /* Matches your menu links */
+    font-size: 2.4rem; /* Matches your menu links */
     font-weight: normal; /* Removes the bold */
     color: #fff;
     white-space: nowrap; /* Forces text to stay next to the image */

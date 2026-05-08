@@ -86,7 +86,7 @@ body{
 .home{
     min-height: 70vh;
     width: 100vw;
-    background-image: url(../images/img3.jpg);
+    background-image: url(../images/img3.webp);
     background-size: cover;
     display: flex;
     align-items: center;

@@ -966,6 +966,7 @@ body{
         .footer .footer-top .footer-contact p {
             color: #ffffff;
             line-height: 26px;
+            text-transform: none;
         }
         
         .footer .footer-top .footer-newsletter input[type="email"] {

@@ -109,11 +109,22 @@ body{
     position: fixed;
 }
 
-.header .logo img{
-    width: 130%;
+/* This controls the container, keeping the icon and text on the same line */
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem; /* Matches your menu links */
+    font-weight: normal; /* Removes the bold */
+    color: #fff;
+    white-space: nowrap; /* Forces text to stay next to the image */
+}
+
+/* This fixes the image sizing so it doesn't break the layout */
+.header .logo img {
     height: 3rem;
-    top: 0;
-    left: 0;
+    width: auto; 
+    border-radius: .5rem;
 }
 
 .header .navbar ul{
@@ -1085,11 +1096,8 @@ body{
     }
 
     .header .logo img{
-        width: 20%;
         height: 3rem;
-        top: 0;
-        left: 0;
-        background-size: cover;
+        width: auto;
     }
 
     .header .fa-bars{

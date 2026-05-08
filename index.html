@@ -169,13 +169,12 @@
         </div>
 
         <div class="owl-carousel platforms-carousel" style="margin-top: 5rem;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original-wordmark.svg" alt="Google Cloud" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" alt="Microsoft Azure" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original-wordmark.svg" alt="DigitalOcean" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" alt="Docker" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" style="height: 150px; width: auto; object-fit: contain; padding: 20px;">
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" style="height: 120px; width: auto; object-fit: contain; padding: 20px;"></div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original-wordmark.svg" alt="Google Cloud" style="height: 120px; width: auto; object-fit: contain; padding: 20px;"></div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" alt="Microsoft Azure" style="height: 120px; width: auto; object-fit: contain; padding: 20px;"></div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original-wordmark.svg" alt="DigitalOcean" style="height: 120px; width: auto; object-fit: contain; padding: 20px;"></div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" style="height: 120px; width: auto; object-fit: contain; padding: 20px;"></div>
+            <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" alt="Docker" style="height: 120px; width: auto; object-fit: contain; padding: 20px;"></div>
         </div>
     </div>
 </div>
@@ -209,6 +208,24 @@
 <script src="lib/counterup/counterup.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // Adding a tiny delay ensures the browser has time to download the logos first
+    setTimeout(function() {
+        $(".platforms-carousel").owlCarousel({
+          autoplay: true,
+          dots: true,
+          loop: true,
+          margin: 30,
+          responsive: {
+            0: { items: 1 },       
+            768: { items: 2 },     
+            1000: { items: 3 }     
+          }
+        });
+    }, 200); 
+  });
+</script>
 
 <section class="team" style="margin-top: 7rem;">
   <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>

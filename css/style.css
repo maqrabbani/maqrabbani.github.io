@@ -135,11 +135,15 @@ body{
 .header .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 2rem; /* Matches your menu links */
-    font-weight: normal; /* Removes the bold */
+    font-size: 2.5rem;
     color: #fff;
-    white-space: nowrap; /* Forces text to stay next to the image */
+    font-weight: bold;
+    
+    /* NEW STYLES */
+    font-family: 'Michroma', sans-serif; /* The tech font */
+    text-transform: uppercase;          /* Forces ALL CAPS */
+    letter-spacing: 2px;               /* Adds breathing room between letters */
+    text-decoration: none;
 }
 
 /* This fixes the image sizing so it doesn't break the layout */

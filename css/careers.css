@@ -58,13 +58,7 @@ body{
     padding: 0;
 }
 
-.header .navbar ul li{
-    margin: 0 1.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.header .navbar ul li{
+.header .navbar ul li {
     margin: 0 1.5rem;
 }
 

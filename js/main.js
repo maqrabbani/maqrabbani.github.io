@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-    $('.dropdown > a').on('click', function(e) {
+    $('.dropdown > a').off('click').on('click', function(e) {
         e.preventDefault();
-        $(this).next('.dropdown-menu').slideToggle(300);
+        $(this).next('.dropdown-menu').stop().slideToggle(300);
     });
 
      $('.fa-bars').click(function(){

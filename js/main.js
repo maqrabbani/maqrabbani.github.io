@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    $('.dropdown > a').on('click', function(e) {
+        e.preventDefault();
+        $(this).next('.dropdown-menu').slideToggle(300);
+    });
+
      $('.fa-bars').click(function(){
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');

@@ -396,12 +396,6 @@
  <script>
     $(document).ready(function(){
         
-      /* --- NEW CODE: Make the whole "Services" word clickable to open the menu --- */
-      $('.dropdown > a').on('click', function(e) {
-          e.preventDefault(); // Stops any weird jumping
-          $(this).next('.dropdown-menu').slideToggle(300); // Slides the menu open/closed smoothly
-      });
-      /* -------------------------------------------------------------------------- */
 
       setTimeout(function() {
           /* 1. Global Platforms Carousel */

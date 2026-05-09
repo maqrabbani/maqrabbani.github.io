@@ -1437,16 +1437,27 @@ body{
         width: 100%;
         align-items: center; /* Centers the flex items */
     }
+    /* Mobile Dropdown Fixes */
     .header .navbar ul li.dropdown {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block; /* Removed Flexbox to stop jQuery animation glitch */
         width: 100%;
+        text-align: center; /* Centers the "Services" text */
+    }
+
+    .header .navbar ul li .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 0; 
+        text-align: center; 
+        width: 100%;
+        display: none; /* Let jQuery handle showing/hiding */
     }
     
     .header .navbar ul li .dropdown-menu li a {
         color: grey;
         font-size: 2rem;
-        padding: 1rem 0; /* Removes side padding so it centers perfectly */
+        padding: 1rem 0; 
+        display: block; /* Ensures mobile links are wide and easy to tap */
     }
 }

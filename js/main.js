@@ -1,9 +1,12 @@
 $(document).ready(function(){
 
     $('.dropdown > a').off('click').on('click', function(e) {
-        e.preventDefault();
+    e.preventDefault();
+    // Only run the click animation on mobile/tablet screens (1000px or smaller)
+    if ($(window).width() <= 1000) {
         $(this).next('.dropdown-menu').stop().slideToggle(300);
-    });
+    }
+});
 
      $('.fa-bars').click(function(){
         $(this).toggleClass('fa-times');

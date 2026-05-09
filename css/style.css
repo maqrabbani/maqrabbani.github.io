@@ -1025,8 +1025,11 @@ body{
 }
 
 /* Show the menu when hovering */
-.header .navbar ul li.dropdown:hover .dropdown-menu {
-    display: flex;
+/* Show the menu when hovering (COMPUTERS ONLY) */
+@media (min-width: 1001px) {
+    .header .navbar ul li.dropdown:hover .dropdown-menu {
+        display: flex;
+    }
 }
 
 .header .navbar ul li .dropdown-menu li {
@@ -1157,10 +1160,6 @@ body{
 @media (max-width: 1000px){
     html{
         font-size: 50%;
-    }
-    /* Stops mobile browsers from forcing the menu open on "tap-hover" */
-    .header .navbar ul li.dropdown:hover .dropdown-menu {
-        display: none; 
     }
 
     .header .logo img{

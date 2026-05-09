@@ -1432,11 +1432,15 @@ body{
         position: static;
         box-shadow: none;
         background: transparent;
-        padding-left: 2rem;
+        padding-left: 0; /* Changed from 2rem to 0 to stop pushing it to the right */
+        text-align: center; /* Forces the sub-links to perfectly center */
+        width: 100%;
+        align-items: center; /* Centers the flex items */
     }
     
     .header .navbar ul li .dropdown-menu li a {
         color: grey;
         font-size: 2rem;
+        padding: 1rem 0; /* Removes side padding so it centers perfectly */
     }
 }

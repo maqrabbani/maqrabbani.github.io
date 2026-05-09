@@ -38,7 +38,7 @@
                 <li><a href="/#home">home</a></li>
                 <li><a href="/#about">about</a></li>
                 <li class="dropdown">
-                    <a href="/#service">services <i class="fas fa-caret-down" style="font-size: 1.5rem; margin-left: .5rem;"></i></a>
+                    <a href="javascript:void(0);">services <i class="fas fa-caret-down" style="font-size: 1.5rem; margin-left: .5rem;"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="/web-development/">Web Development</a></li>
                         <li><a href="/mobile-development/">Mobile Apps</a></li>
@@ -393,8 +393,16 @@
   <script src="/lib/lightbox/js/lightbox.min.js"></script>
   <script src="/js/main.js"></script>
   
-  <script>
+ <script>
     $(document).ready(function(){
+        
+      /* --- NEW CODE: Make the whole "Services" word clickable to open the menu --- */
+      $('.dropdown > a').on('click', function(e) {
+          e.preventDefault(); // Stops any weird jumping
+          $(this).next('.dropdown-menu').slideToggle(300); // Slides the menu open/closed smoothly
+      });
+      /* -------------------------------------------------------------------------- */
+
       setTimeout(function() {
           /* 1. Global Platforms Carousel */
           $(".platforms-carousel").owlCarousel({

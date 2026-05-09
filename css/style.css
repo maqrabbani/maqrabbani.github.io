@@ -1160,7 +1160,7 @@ body{
     }
     /* Stops mobile browsers from forcing the menu open on "tap-hover" */
     .header .navbar ul li.dropdown:hover .dropdown-menu {
-        display: none !important; 
+        display: none; 
     }
 
     .header .logo img{

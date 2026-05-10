@@ -130,6 +130,58 @@ body{
     line-height: 26px;
     color: #666;
 }
+/* --- INDUSTRY EXPERTISE SECTION --- */
+.industry-grid {
+    display: grid;
+    /* On desktop, this creates a flexible grid of columns */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 0 15px;
+}
+
+.industry-item {
+    background: #fff;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.industry-item i {
+    font-size: 3.5rem;
+    color: #00bfff; /* Matriq Blue */
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.industry-item span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.industry-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.2);
+    border-color: #00bfff;
+}
+
+.industry-item:hover i {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .industry-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+    }
+}
 
 /* This controls the container, keeping the icon and text on the same line */
 .header .logo {
@@ -165,6 +217,7 @@ body{
     font-size: 2rem;
     color: #fff;
 }
+
 
 .header .navbar ul li a:hover{
     color: #00bfff;

@@ -95,22 +95,17 @@ body{
     background: #00bfff;
 }
 
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     flex-wrap: nowrap;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; /* Clean, standard padding */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    position: fixed;
-    padding-top: calc(1rem + env(safe-area-inset-top));
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
 }
 .header.scrolled {
     background: #002e5f !important;
@@ -1268,8 +1263,14 @@ body{
         transform: rotate(90deg);
     }
 
-    .header .nav-toggle{
-        top: 5.8rem;
+    /* Fixes header height on mobile to clear the clock */
+    .header {
+        padding-top: 3.5rem; /* Pushes the logo/hamburger down away from the clock */
+        padding-bottom: 1.5rem;
+    }
+
+    .header .nav-toggle {
+        top: 8rem; /* Pushes the dropdown menu down so it opens below the new thicker header */
     }
 
     .home h1{

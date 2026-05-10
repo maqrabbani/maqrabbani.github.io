@@ -22,9 +22,12 @@ $(document).ready(function(){
     });
 
     // 4. Header Scroll Logic (Fixed for Mobile Stuttering)
-    $(window).on('load scroll',function(){
-        // Note: The lines closing the menu on scroll were removed from here
+   $(window).on('load scroll',function(){
+        /* (Optional: keep or remove the lines that close the menu on scroll) */
+        $('.fa-bars').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
 
+        /* NEW CODE: Use a CSS class instead of injecting styles to stop stuttering */
         if($(window).scrollTop() > 35) {
             $('.header').addClass('scrolled');
         } else {

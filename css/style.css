@@ -101,12 +101,16 @@ body{
     justify-content: space-between;
     width: 100%;
     flex-wrap: nowrap;
-    padding: 1rem 2rem; /* Clean, standard padding */
+    padding: 1rem 2rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+    /* CRITICAL FIX: Only animate the background color, do NOT animate layout changes */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* This applies the dark blue background when you scroll */
 .header.scrolled {
     background: #002e5f !important;
     box-shadow: 0 .2rem .5rem rgba(0,0,0,.4) !important;
@@ -1264,13 +1268,13 @@ body{
     }
 
     /* Fixes header height on mobile to clear the clock */
-    .header {
-        padding-top: 3.5rem; /* Pushes the logo/hamburger down away from the clock */
-        padding-bottom: 1.5rem;
+   .header {
+        padding-top: 3.5rem !important; 
+        padding-bottom: 1.5rem !important;
     }
 
     .header .nav-toggle {
-        top: 8rem; /* Pushes the dropdown menu down so it opens below the new thicker header */
+        top: 8rem !important; /* Pushes the dropdown menu down to match */
     }
 
     .home h1{

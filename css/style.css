@@ -107,8 +107,6 @@ body{
     left: 0;
     z-index: 100;
     position: fixed;
-    -webkit-transform: translateZ(0); 
-    transform: translateZ(0);
 }
 .header.scrolled {
     background: #002e5f !important;

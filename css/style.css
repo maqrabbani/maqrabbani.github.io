@@ -103,25 +103,112 @@ body{
     background: #00bfff;
 }
 
+/* =========================================
+   NEW WHITE FIXED HEADER
+   ========================================= */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     flex-wrap: nowrap;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem; /* Slightly taller padding for modern look */
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
-    /* CRITICAL FIX: Only animate the background color, do NOT animate layout changes */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    background: #ffffff !important; /* Always white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important; /* Soft permanent shadow */
+    transition: all 0.3s ease;
 }
 
-/* This applies the dark blue background when you scroll */
+/* Because the header is now always white, remove the scroll logic */
 .header.scrolled {
-    background: #002e5f !important;
-    box-shadow: 0 .2rem .5rem rgba(0,0,0,.4) !important;
+    /* No changes needed on scroll anymore */
+}
+
+/* Logo Text - Must be dark now */
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.2rem; 
+    font-weight: 600;
+    color: var(--primary-dark) !important; /* Dark text */
+    white-space: nowrap; 
+}
+
+.header .logo img {
+    height: 3.5rem;
+    width: auto; 
+}
+
+/* Desktop Navigation Links */
+.header .navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+.header .navbar ul li {
+    margin: 0 1.5rem;
+}
+
+.header .navbar ul li a {
+    font-size: 1.6rem; /* Slightly smaller, more modern size */
+    font-weight: 500;
+    color: var(--primary-dark) !important; /* Dark text */
+    position: relative; /* Needed for the custom hover underline */
+    padding-bottom: 0.5rem;
+    text-decoration: none !important;
+}
+
+/* Custom Green Underline Hover Effect (Matches your image) */
+.header .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px; /* Thickness of the underline */
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color); /* Uses the sharp green from our new theme */
+    transition: width 0.3s ease;
+}
+
+.header .navbar ul li a:hover::after {
+    width: 100%; /* Line slides in from the left on hover */
+}
+
+.header .navbar ul li a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Hamburger Icon for Mobile - Must be dark now */
+.header .fa-bars {
+    color: var(--primary-dark);
+    cursor: pointer;
+    font-size: 3rem;
+    display: none;
+}
+
+/* Dropdown Menu Adjustments */
+.header .navbar ul li .dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem 0;
+    border-top: 3px solid var(--accent-color); /* Green accent strip on top of dropdown */
+}
+
+.header .navbar ul li .dropdown-menu li a::after {
+    display: none; /* Turn off the sliding underline for dropdown items */
+}
+
+.header .navbar ul li .dropdown-menu li a:hover {
+    background: var(--bg-light);
+    color: var(--accent-color) !important;
 }
 /* --- WORK PROCESS CARDS --- */
 .process-card {
@@ -198,57 +285,7 @@ body{
     }
 }
 
-/* This controls the container, keeping the icon and text on the same line */
-.header .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 2rem; /* Matches your menu links */
-    font-weight: normal; /* Removes the bold */
-    color: #fff;
-    white-space: nowrap; /* Forces text to stay next to the image */
-}
 
-/* This fixes the image sizing so it doesn't break the layout */
-.header .logo img {
-    height: 3rem;
-    width: auto; 
-    border-radius: .5rem;
-}
-
-.header .navbar ul{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 0;
-}
-
-.header .navbar ul li{
-    margin: 0 1.5rem;
-}
-
-.header .navbar ul li a{
-    font-size: 2rem;
-    color: #fff;
-}
-
-
-.header .navbar ul li a:hover{
-    color: #00bfff;
-    text-decoration: underline;
-}
-
-.header .logo i{
-    padding: 0.5rem;
-}
-
-.header .fa-bars{
-    color: #fff;
-    cursor: pointer;
-    font-size: 3rem;
-    display: none;
-}
 
 .home{
     min-height: 100vh;
@@ -263,6 +300,7 @@ body{
     padding: 0 1rem;
     position: relative;
     overflow: hidden !important;
+    padding-top: 120px !important;
 }
 
 .home h1{
@@ -1230,46 +1268,21 @@ body{
         font-size: 50%;
     }
 
-    .header .logo img{
-        height: 3rem;
-        width: auto;
-    }
-
-    .header .fa-bars{
+    @media (max-width: 1000px) {
+    .header .fa-bars {
         display: block;
-        color: 	white;
-        margin-right: 1rem;
+        color: var(--primary-dark); /* Ensure hamburger is visible on white background */
     }
 
-    .header .fa-bars:hover{
-        color: #00bfff;
+    .header .navbar {
+        background-color: #ffffff;
+        border-top: 1px solid #e2e8f0;
     }
 
-    .header .navbar{
-        position: fixed;
-        top: -120%;
-        left: 0;
-        height: auto;
-        width: 100%;
-        background-color: white;
-        z-index: 1000;
-        border-top: .1rem solid rgba(0,0,0,.3);
+    .header .navbar ul li a {
+        color: var(--text-muted) !important;
     }
-
-    .header .navbar ul{
-        height: 100%;
-        width: 100%;
-        flex-flow: column;
-    }
-
-    .header .navbar ul li{
-        margin: 1rem 0;
-    }
-
-    .header .navbar ul li a{
-        color: grey;
-        font-size: 2.4rem;
-    }
+}
 
     .header .fa-times{
         transform: rotate(90deg);

@@ -1538,3 +1538,119 @@ body{
         display: block; /* Ensures mobile links are wide and easy to tap */
     }
 }
+/* =========================================
+   MODERN UI UPGRADE 
+   ========================================= */
+
+:root {
+    --primary-dark: #1e293b;     /* Deep slate for headings */
+    --text-muted: #64748b;       /* Soft slate for standard text */
+    --accent-color: #10b981;     /* Sharp modern tech green */
+    --accent-hover: #059669;     /* Darker green for hover states */
+    --bg-light: #f8fafc;         /* Ultra-clean light background */
+    --card-bg: #ffffff;
+    --border-radius: 16px;       /* Modern rounded corners */
+    --shadow-default: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+    color: var(--primary-dark) !important;
+    font-weight: 700;
+}
+
+/* 1. Modernize Cards (Services & Process) */
+.item, .process-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 4rem 2.5rem;
+    box-shadow: var(--shadow-default);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.item:hover, .process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Override old inline cyan colors to the modern green, add soft backgrounds */
+.item i, .process-card i {
+    color: var(--accent-color) !important;
+    background: rgba(16, 185, 129, 0.1); 
+    height: 90px;
+    width: 90px;
+    line-height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 2.5rem auto !important;
+    display: block !important;
+    font-size: 3.5rem !important;
+    transition: var(--transition);
+}
+
+.item:hover i, .process-card:hover i {
+    background: var(--accent-color);
+    color: #ffffff !important;
+    transform: scale(1.1);
+}
+
+/* 2. Premium Pill Buttons */
+.btn, .contact-form-btn {
+    background-color: var(--accent-color) !important;
+    color: #ffffff !important;
+    border-radius: 50px !important; 
+    padding: 1.2rem 3.5rem !important;
+    font-size: 1.6rem;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    border: none;
+    transition: var(--transition);
+    text-transform: none; /* Modern buttons rarely use all-caps */
+}
+
+.btn:hover, .contact-form-btn:hover {
+    background-color: var(--accent-hover) !important;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    transform: translateY(-2px);
+}
+
+/* 3. Clean up the Hero Section */
+.home {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.home h1 {
+    font-size: 5rem;
+    letter-spacing: -1.5px;
+}
+
+.home h2 {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* 4. High-Fidelity Form Inputs */
+.contact-form-txt, .contact-form-phone, .contact-form-email, .contact-form-txtarea {
+    border-radius: 12px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    transition: var(--transition);
+}
+
+.contact-form-txt:focus, .contact-form-phone:focus, .contact-form-email:focus, .contact-form-txtarea:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1) !important;
+    outline: none;
+}

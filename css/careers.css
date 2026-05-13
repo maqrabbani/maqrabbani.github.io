@@ -18,7 +18,9 @@ html {
     transition: all .2s linear;
     text-decoration: none;
 }
-
+a {
+    text-decoration: none !important;
+}
 
 body{
     overflow-x: hidden;

@@ -100,32 +100,27 @@ document.addEventListener("DOMContentLoaded", function() {
     // ==========================================
     // 6. Carousels (Using Swiper.js)
     // ==========================================
-    // Note: Make sure your HTML uses standard Swiper classes: 
-    // <div class="swiper clients-carousel"> <div class="swiper-wrapper"> <div class="swiper-slide">...
     
-    if (document.querySelector('.clients-carousel')) {
-        new Swiper('.clients-carousel', {
+    if (document.querySelector('.platforms-carousel')) {
+        new Swiper('.platforms-carousel', {
             loop: true,
             autoplay: { delay: 3000, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: {
-                0: { slidesPerView: 2, spaceBetween: 10 },
-                768: { slidesPerView: 4, spaceBetween: 20 },
-                900: { slidesPerView: 6, spaceBetween: 30 }
+                0: { slidesPerView: 1, spaceBetween: 30 },
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1000: { slidesPerView: 4, spaceBetween: 30 }
             }
         });
     }
 
-    if (document.querySelector('.testimonials-carousel')) {
-        new Swiper('.testimonials-carousel', {
+    if (document.querySelector('.tech-carousel')) {
+        new Swiper('.tech-carousel', {
             loop: true,
-            autoplay: { delay: 5000, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true },
+            autoplay: { delay: 4000, disableOnInteraction: false },
             breakpoints: {
-                0: { slidesPerView: 1, spaceBetween: 10 },
-                576: { slidesPerView: 2, spaceBetween: 20 },
-                768: { slidesPerView: 3, spaceBetween: 30 },
-                992: { slidesPerView: 4, spaceBetween: 30 }
+                0: { slidesPerView: 1, spaceBetween: 30 },
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1000: { slidesPerView: 4, spaceBetween: 30 }
             }
         });
     }

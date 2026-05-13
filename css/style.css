@@ -1660,14 +1660,14 @@ body{
 /* Hover Physics - Floats up and glow */
 .item:hover, .process-card:hover, .industry-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.12);
-    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 15px 30px rgba(29, 78, 216, 0.12); /* Modern Dark Blue Shadow */
+    border-color: rgba(29, 78, 216, 0.3); /* Modern Dark Blue Border */
 }
 
 /* 2. The Circular Icon Backgrounds */
 .item i, .process-card i, .industry-item i {
-    color: #10b981 !important; /* Sharp Green */
-    background: rgba(16, 185, 129, 0.1); 
+    color: #1d4ed8 !important; /* Modern Dark Blue */
+    background: rgba(29, 78, 216, 0.1); /* Soft Blue Background */
     height: 85px;
     width: 85px;
     line-height: 85px;
@@ -1678,9 +1678,9 @@ body{
     transition: all 0.3s ease;
 }
 
-/* Icon Hover State - Fills solid green */
+/* Icon Hover State - Fills solid blue */
 .item:hover i, .process-card:hover i, .industry-item:hover i {
-    background: #10b981;
+    background: #1d4ed8; /* Solid Modern Dark Blue */
     color: #ffffff !important;
     transform: scale(1.1);
 }

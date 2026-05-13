@@ -1552,28 +1552,49 @@ body{
     }
 }
 /* =========================================
-   ENTERPRISE HERO SECTION (TECH MAHINDRA STYLE)
+   VIDEO HERO SECTION (Left Aligned)
    ========================================= */
 
 .home {
-    /* Uses a sleek dark overlay over a generic tech background image */
-    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover no-repeat !important;
+    position: relative;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 120px !important; /* Prevents header overlap */
-    position: relative;
-    border-bottom: none;
+    align-items: center; /* Vertically centers the container */
+    padding-top: 120px !important; /* Accounts for fixed header */
+    overflow: hidden; /* Ensures video stays inside */
+    background-color: #0f172a; /* Dark fallback while video loads */
 }
 
+/* 1. Fullscreen Background Video */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video scales without stretching */
+    z-index: 0;
+}
+
+/* 2. Enterprise Dark Overlay (Gradient for left-text readability) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.5) 100%);
+    z-index: 1;
+}
+
+/* 3. Left-Aligned Container */
 .home .container {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Aligns text to the left */
+    text-align: left;
 }
 
 /* Massive, authoritative headline */
@@ -1581,7 +1602,7 @@ body{
     font-size: 6rem !important; 
     font-weight: 800 !important;
     color: #ffffff !important;
-    max-width: 900px;
+    max-width: 800px;
     margin-bottom: 2.5rem;
     line-height: 1.1;
     letter-spacing: -2px;
@@ -1592,14 +1613,14 @@ body{
     font-size: 2.2rem !important;
     color: #cbd5e1 !important; /* Soft slate/grey */
     font-weight: 400 !important;
-    max-width: 750px;
+    max-width: 700px;
     margin-bottom: 4rem;
     line-height: 1.6;
 }
 
 /* Premium CTA Button */
 .home-cta {
-    background-color: var(--accent-color) !important; /* Your sharp green */
+    background-color: var(--accent-color, #1d4ed8) !important; /* Uses your new dark blue */
     color: #ffffff !important;
     padding: 1.5rem 4rem !important;
     border-radius: 50px;
@@ -1607,24 +1628,23 @@ body{
     font-weight: 600;
     text-decoration: none !important;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
     display: inline-block;
 }
 
 .home-cta:hover {
     background-color: #ffffff !important;
-    color: var(--primary-dark) !important;
+    color: #1e293b !important;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
 
-/* Force hide the old waves if they are still lingering anywhere */
-.wave {
-    display: none !important;
-}
-
-/* Mobile Adjustments for the massive text */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
+    .hero-overlay {
+        /* Make it universally dark on mobile so text is readable */
+        background: rgba(15, 23, 42, 0.85);
+    }
     .home h1 {
         font-size: 4rem !important;
         letter-spacing: -1px;

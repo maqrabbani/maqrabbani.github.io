@@ -1790,7 +1790,7 @@ body{
 .back-to-top {
     display: none !important;
 }
-/* --- CLEAN LIST MEGA MENU --- */
+/* --- WIDE MEGA MENU WITH SIDE REPORTS --- */
 .header .navbar ul li.mega-dropdown {
     position: static; 
 }
@@ -1801,11 +1801,11 @@ body{
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; /* Narrower than the card version */
-    max-width: 900px;
+    width: 90vw; /* Very wide to match standard mega menu designs */
+    max-width: 1200px;
     background: #ffffff;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 0 0 12px 12px;
     padding: 4rem;
     border-top: 4px solid #00bfff; /* Matriq Cyan */
     z-index: 999;
@@ -1815,28 +1815,27 @@ body{
 @media (min-width: 1001px) {
     .header .navbar ul li.mega-dropdown:hover .mega-menu {
         display: block;
-        animation: megaListFadeIn 0.3s ease forwards;
+        animation: megaSlideDown 0.3s ease forwards;
     }
 }
 
+/* Grid Layout: Links get 1 part each, Reports get 1.5 parts each */
 .mega-menu-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
     gap: 4rem;
 }
 
-.mega-column-title {
-    border-right: 1px solid #e2e8f0;
-    padding-right: 2rem;
-}
-
+/* Link Columns Styling */
 .mega-list-title {
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #1e293b;
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 1rem;
 }
 
 .mega-list {
@@ -1845,7 +1844,7 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .mega-list li {
@@ -1859,19 +1858,89 @@ body{
     font-weight: 500 !important;
     padding: 0 !important;
     display: inline-block;
-    transition: color 0.2s ease !important;
+    transition: all 0.2s ease !important;
 }
 
 .mega-list li a::after {
-    display: none !important; /* Hide the top-level navbar underline animation */
+    display: none !important; 
 }
 
 .mega-list li a:hover {
-    color: #00bfff !important; /* Text turns cyan on hover */
+    color: #00bfff !important; 
+    transform: translateX(5px); /* Slight nudge right on hover */
     background: transparent !important;
 }
 
-@keyframes megaListFadeIn {
+/* Side Report Cards Styling */
+.report-card {
+    display: block;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid #e2e8f0;
+}
+
+.report-card::after {
+    display: none !important;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.15);
+    border-color: #00bfff;
+}
+
+.report-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.report-content {
+    padding: 2rem;
+    text-align: left;
+}
+
+.report-tag {
+    display: inline-block;
+    background: #00bfff;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.report-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+.report-link {
+    font-size: 1.4rem;
+    color: #00bfff;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.report-card:hover .report-link i {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+@keyframes megaSlideDown {
     from { opacity: 0; transform: translate(-50%, 15px); }
     to { opacity: 1; transform: translate(-50%, 0); }
 }
@@ -1890,20 +1959,7 @@ body{
         border-top: none;
     }
     .mega-menu-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    .mega-column-title {
-        border-right: none;
-        padding-right: 0;
-        border-bottom: 1px solid #e2e8f0;
-        padding-bottom: 2rem;
-        text-align: center;
-    }
-    .mega-list-title {
-        text-align: center;
-    }
-    .mega-list {
-        align-items: center;
+        grid-template-columns: 1fr; /* Stacks everything on mobile */
+        gap: 3rem;
     }
 }

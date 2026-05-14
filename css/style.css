@@ -1790,28 +1790,26 @@ body{
 .back-to-top {
     display: none !important;
 }
-/* --- WIDE 5-COLUMN MEGA MENU (Fixed Alignment) --- */
+/* --- BULLETPROOF 5-COLUMN MEGA MENU --- */
+
+/* 1. Force the parent list item to let the dropdown escape */
 .header .navbar ul li.mega-dropdown {
-    position: static; /* Tells the dropdown to use the header as its boundary */
+    position: static !important; 
 }
 
+/* 2. Outer Wrapper: Spans 100% of the screen safely below header */
 .header .navbar ul li .mega-menu {
     display: none;
-    position: absolute;
-    top: 100%; /* Pushes it exactly to the bottom of the header */
-    margin-top: 5px; /* Adds a tiny gap to prevent overlap */
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto; /* Perfectly centers it without breaking the right edge */
-    width: 95%; /* Uses percentage instead of vw to avoid scrollbar overflow */
-    max-width: 1350px; /* Wide enough for 5 columns */
+    position: absolute !important;
+    top: 100% !important; /* Snaps exactly to the bottom of your header */
+    left: 0 !important;
+    width: 100vw !important; /* Forces full screen width */
+    max-width: 100% !important; /* Prevents side-scrolling */
     background: #ffffff;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    border-radius: 0 0 12px 12px;
-    padding: 3.5rem;
-    border-top: 4px solid #00bfff; /* Matriq Cyan */
-    z-index: 999;
+    border-top: 4px solid #00bfff;
+    z-index: 9999;
+    padding: 0 !important; /* We move padding to the inner container */
 }
 
 /* Desktop Hover */
@@ -1822,10 +1820,16 @@ body{
     }
 }
 
-/* 5 Column Grid setup */
+/* 3. Inner Wrapper: Perfectly centers the content */
+.mega-menu-container {
+    max-width: 1350px; /* Limits how wide the columns can stretch */
+    margin: 0 auto; /* Centers the container perfectly */
+    padding: 3.5rem 2rem; /* Adds the breathing room inside */
+}
+
+/* 4. The 5-Column Grid */
 .mega-menu-grid {
     display: grid;
-    /* Title(1) | Dev Links(1) | Infra Links(1) | Report 1(1.5) | Report 2(1.5) */
     grid-template-columns: 1fr 1fr 1fr 1.5fr 1.5fr; 
     gap: 3rem;
 }
@@ -1958,15 +1962,16 @@ body{
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 1000px) {
     .header .navbar ul li.mega-dropdown {
-        position: relative;
+        position: relative !important;
     }
     .header .navbar ul li .mega-menu {
-        position: static;
-        width: 100%;
+        position: static !important;
+        width: 100% !important;
         box-shadow: none;
-        padding: 2rem;
         border-top: none;
-        margin-top: 0;
+    }
+    .mega-menu-container {
+        padding: 2rem 1rem;
     }
     .mega-menu-grid {
         grid-template-columns: 1fr;

@@ -482,3 +482,32 @@ body { overflow-x: hidden; }
         margin-bottom: 1rem;
     }
 }
+/* =========================================
+   HEADER ICONS (Facebook & Call)
+   ========================================= */
+.header-icons {
+    margin-left: auto; /* This forces the icons to the far right side */
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Distance between the two icons */
+}
+
+.header-icons a {
+    font-size: 2rem;
+    color: var(--primary-color); /* Uses your existing dark blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: #f8fafc; /* Very light gray background to make them pop */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.header-icons a:hover {
+    color: #ffffff;
+    background-color: var(--accent-green); /* Turns green on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}

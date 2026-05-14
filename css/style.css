@@ -91,7 +91,7 @@ body { overflow-x: hidden; }
 .header .navbar ul li a { font-size: 1.6rem; font-weight: 500; color: var(--text-dark); position: relative; padding-bottom: 0.5rem; }
 .header .navbar ul li a::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background-color: var(--accent-green); transition: width 0.3s ease; }
 .header .navbar ul li a:hover::after { width: 100%; }
-.header .navbar ul li a:hover { color: var(--accent-green) !important; }
+.header .navbar ul li a:hover { color: var(--text-dark) !important; }
 .header .fa-bars { color: var(--text-dark); cursor: pointer; font-size: 3rem; display: none; }
 
 /* Normal Dropdown */
@@ -101,7 +101,7 @@ body { overflow-x: hidden; }
 .header .navbar ul li .dropdown-menu li { margin: 0; width: 100%; }
 .header .navbar ul li .dropdown-menu li a { color: var(--text-dark); font-size: 1.5rem; padding: 1rem 2rem; display: block; }
 .header .navbar ul li .dropdown-menu li a::after { display: none; }
-.header .navbar ul li .dropdown-menu li a:hover { background: var(--bg-light); color: var(--accent-green) !important; }
+.header .navbar ul li .dropdown-menu li a:hover { background: var(--bg-light); color: var(--text-dark) !important; }
 
 /* =========================================
    ULTIMATE 5-COLUMN MEGA MENU
@@ -324,4 +324,137 @@ body { overflow-x: hidden; }
     .faq .row { padding: 0 1.5rem; flex-flow: column; }
     .faq .row .accordion-container { width: 100%; }
     .whatsapp-float { width: 55px; height: 55px; bottom: 25px; right: 25px; font-size: 32px; }
+}
+/* =========================================
+   CAREER PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* Career Hero Banner (Overrides the homepage video hero) */
+.home.career-hero {
+    min-height: 60vh;
+    background-image: url(../images/img3.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.career-heading { text-align: center; margin-bottom: 2rem; }
+.career-heading p { font-size: 2rem; color: #64748b; }
+
+/* Career Form Container */
+.career {
+    width: 80%;
+    max-width: 900px;
+    margin: 3rem auto 6rem auto;
+    padding: 4rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Shared Input Styles */
+.career-form-txt, 
+.career-form-experience, 
+.career-form-email, 
+.career-form-phone, 
+.career-form-txtarea {
+    width: 100%;
+    color: var(--text-dark);
+    border: 1px solid #cbd5e1;
+    border-radius: 50px;
+    outline: none;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 2.5rem;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+/* Input Focus States */
+.career-form-txt:focus, 
+.career-form-experience:focus, 
+.career-form-email:focus, 
+.career-form-phone:focus, 
+.career-form-txtarea:focus {
+    border-color: var(--accent-green);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Textarea Specific */
+.career-form-txtarea {
+    border-radius: 16px;
+    height: 150px;
+    resize: vertical;
+}
+
+/* Placeholders */
+::placeholder {
+    color: #94a3b8;
+}
+
+/* Radio Buttons & File Upload Area */
+.radio-class, .file {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    padding: 0 1rem;
+}
+
+.radio-class .radio {
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
+    transform: scale(1.2);
+}
+
+.file .upload {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+/* Submit Button */
+.career-form-btn {
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    height: 5rem;
+    width: 100%;
+    max-width: 25rem;
+    margin: 2rem auto 0 auto;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 46, 95, 0.2);
+}
+
+.career-form-btn:hover {
+    background: var(--accent-green);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* Mobile Adjustments for Career Form */
+@media (max-width: 768px) {
+    .career {
+        width: 95%;
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .radio-class {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .radio-class span {
+        margin-bottom: 1rem;
+    }
 }

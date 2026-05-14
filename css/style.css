@@ -483,31 +483,51 @@ body { overflow-x: hidden; }
     }
 }
 /* =========================================
-   HEADER ICONS (Facebook & Call)
+   HEADER ICONS (Facebook & Call) - UPGRADED
    ========================================= */
 .header-icons {
-    margin-left: auto; /* This forces the icons to the far right side */
+    margin-left: auto; 
     display: flex;
     align-items: center;
-    gap: 2rem; /* Distance between the two icons */
+    gap: 3.5rem; /* Increased the distance between the two icons significantly */
+    padding-right: 1rem; /* Gives a little breathing room from the right edge of the screen */
 }
 
 .header-icons a {
-    font-size: 2rem;
-    color: var(--primary-color); /* Uses your existing dark blue */
+    font-size: 2.4rem; /* Noticeably larger icons */
+    color: var(--text-dark); /* Exactly matches the dark color of your menu text */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
-    background-color: #f8fafc; /* Very light gray background to make them pop */
-    transition: all 0.3s ease;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother, premium animation timing */
 }
 
-/* Hover effect */
+/* Premium Hover Effect: A subtle glowing circle appears behind the icon */
+.header-icons a::after {
+    content: '';
+    position: absolute;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: rgba(0, 191, 255, 0.08); /* A very faint, elegant blue background */
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0); /* Hidden by default */
+    transition: transform 0.3s ease;
+}
+
 .header-icons a:hover {
-    color: #ffffff;
-    background-color: var(--accent-green); /* Turns green on hover */
-    transform: translateY(-3px); /* Slight lift effect */
+    color: #00bfff; /* The icon itself turns your brand's bright blue */
+    transform: translateY(-2px); /* A very subtle "lift" effect */
+}
+
+.header-icons a:hover::after {
+    transform: scale(1); /* The faint background circle smoothly scales into view */
+}
+
+/* Keep the mobile hide rule if you had it */
+@media (max-width: 1000px) {
+    .header-icons {
+        display: none;
+    }
 }

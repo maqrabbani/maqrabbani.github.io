@@ -1790,7 +1790,7 @@ body{
 .back-to-top {
     display: none !important;
 }
-/* --- 3-COLUMN MEGA MENU (From Image) --- */
+/* --- CLEAN LIST MEGA MENU --- */
 .header .navbar ul li.mega-dropdown {
     position: static; 
 }
@@ -1801,13 +1801,13 @@ body{
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%; /* Wide layout matching the image */
-    max-width: 1200px;
+    width: 80%; /* Narrower than the card version */
+    max-width: 900px;
     background: #ffffff;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 10px 10px;
-    padding: 3rem;
-    border-top: 4px solid #00bfff; /* Matriq Cyan Border */
+    padding: 4rem;
+    border-top: 4px solid #00bfff; /* Matriq Cyan */
     z-index: 999;
 }
 
@@ -1815,70 +1815,63 @@ body{
 @media (min-width: 1001px) {
     .header .navbar ul li.mega-dropdown:hover .mega-menu {
         display: block;
-        animation: megaFadeIn 0.3s ease forwards;
+        animation: megaListFadeIn 0.3s ease forwards;
     }
 }
 
 .mega-menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
-    gap: 3rem;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    gap: 4rem;
 }
 
-.mega-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    height: 100%;
+.mega-column-title {
+    border-right: 1px solid #e2e8f0;
+    padding-right: 2rem;
 }
 
-.mega-card::after {
-    display: none !important; /* Removes the nav underline animation */
-}
-
-.mega-card:hover {
-    background: #f8fafc;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.mega-card .mega-icon {
-    height: 70px;
-    width: 70px;
-    line-height: 70px;
-    background: rgba(0, 191, 255, 0.1); /* Soft cyan background */
-    color: #00bfff; /* Matriq Cyan */
-    font-size: 3rem;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-}
-
-.mega-card:hover .mega-icon {
-    background: #00bfff;
-    color: #ffffff;
-    transform: scale(1.1);
-}
-
-.mega-card h4 {
-    font-size: 1.8rem;
+.mega-list-title {
+    font-size: 1.6rem;
     font-weight: 600;
     color: #1e293b;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.mega-card p {
-    font-size: 1.3rem;
-    color: #64748b;
-    line-height: 1.6;
-    text-transform: none; /* Keeps paragraph casing normal */
+.mega-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-@keyframes megaFadeIn {
+.mega-list li {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.mega-list li a {
+    color: #64748b !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+    display: inline-block;
+    transition: color 0.2s ease !important;
+}
+
+.mega-list li a::after {
+    display: none !important; /* Hide the top-level navbar underline animation */
+}
+
+.mega-list li a:hover {
+    color: #00bfff !important; /* Text turns cyan on hover */
+    background: transparent !important;
+}
+
+@keyframes megaListFadeIn {
     from { opacity: 0; transform: translate(-50%, 15px); }
     to { opacity: 1; transform: translate(-50%, 0); }
 }
@@ -1893,14 +1886,24 @@ body{
         transform: none;
         width: 100%;
         box-shadow: none;
-        padding: 1rem;
+        padding: 2rem;
         border-top: none;
     }
     .mega-menu-grid {
-        grid-template-columns: 1fr; /* Stacks to 1 column on phones */
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
-    .mega-card {
-        padding: 1.5rem;
+    .mega-column-title {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 2rem;
+        text-align: center;
+    }
+    .mega-list-title {
+        text-align: center;
+    }
+    .mega-list {
+        align-items: center;
     }
 }

@@ -430,17 +430,44 @@ body { overflow-x: hidden; }
 }
 
 /* Radio Buttons & File Upload Area */
-.radio-class, .file {
+/* Radio Buttons & File Upload Area */
+.radio-class {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    padding: 0 1.5rem;
+    text-align: left;
+}
+
+.radio-class .name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: block;
+    color: var(--primary-color);
+}
+
+.radio-class .radio {
+    display: inline-flex; /* Keeps the circle and text perfectly aligned side-by-side */
+    align-items: center;
+    margin-right: 3rem; /* Adds generous horizontal space between the job options */
+    margin-bottom: 1.5rem; /* Adds vertical space if they stack on smaller screens */
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.radio-class .radio input[type="radio"] {
+    margin-right: 1rem; /* Space between the little circle and the text */
+    transform: scale(1.5); /* Makes ONLY the circle larger, avoiding text overlap */
+    cursor: pointer;
+}
+
+/* Kept your original file upload styling intact */
+.file {
     margin-bottom: 3rem;
     font-size: 1.5rem;
     color: var(--text-dark);
     padding: 0 1rem;
-}
-
-.radio-class .radio {
-    margin-right: 1.5rem;
-    margin-left: 0.5rem;
-    transform: scale(1.2);
 }
 
 .file .upload {

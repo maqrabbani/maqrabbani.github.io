@@ -122,7 +122,36 @@ body { overflow-x: hidden; }
 .header .navbar ul li .dropdown-menu li a { color: var(--text-dark); font-size: 1.5rem; padding: 1rem 2rem; display: block; }
 .header .navbar ul li .dropdown-menu li a::after { display: none; }
 .header .navbar ul li .dropdown-menu li a:hover { background: var(--bg-light); color: var(--text-dark) !important; }
+/* =========================================
+   CONTACT BUTTON IN NAVBAR
+   ========================================= */
+.header .navbar ul li a.nav-btn {
+    background-color: var(--text-dark); /* Uses your existing sleek black/dark blue */
+    color: #ffffff !important; /* Forces the text to be white */
+    padding: 1.2rem 2.8rem; /* Creates the button shape (top/bottom, left/right) */
+    border-radius: 50px; /* Gives it smooth, pill-shaped edges */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Prevents jumping on hover */
+}
 
+/* Remove the underline hover effect for the button */
+.header .navbar ul li a.nav-btn::after {
+    display: none; 
+}
+
+/* Premium Hover Effect */
+.header .navbar ul li a.nav-btn:hover {
+    background-color: transparent; 
+    color: var(--text-dark) !important; 
+    border: 2px solid var(--text-dark); /* Turns into a sleek outline button on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 15px rgba(30, 41, 59, 0.15); /* Soft shadow */
+}
+/* Adds extra space before the contact button */
+.header .navbar ul li:last-child {
+    margin-left: 1.5rem; 
+}
 /* =========================================
    ULTIMATE 5-COLUMN MEGA MENU (FULL-WIDTH FIX)
    ========================================= */

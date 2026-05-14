@@ -1268,7 +1268,6 @@ body{
         font-size: 50%;
     }
 
-    @media (max-width: 1000px) {
     .header .fa-bars {
         display: block;
         color: var(--primary-dark); /* Ensure hamburger is visible on white background */
@@ -1518,20 +1517,11 @@ body{
             width: 100%;
         }
         /* Mobile Dropdown Fixes */
-    .header .navbar ul li .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: transparent;
-        padding-left: 0; /* Changed from 2rem to 0 to stop pushing it to the right */
-        text-align: center; /* Forces the sub-links to perfectly center */
-        width: 100%;
-        align-items: center; /* Centers the flex items */
-    }
     /* Mobile Dropdown Fixes */
     .header .navbar ul li.dropdown {
-        display: block; /* Removed Flexbox to stop jQuery animation glitch */
+        display: block; 
         width: 100%;
-        text-align: center; /* Centers the "Services" text */
+        text-align: center; 
     }
 
     .header .navbar ul li .dropdown-menu {
@@ -1541,6 +1531,7 @@ body{
         padding-left: 0; 
         text-align: center; 
         width: 100%;
+        align-items: center;
         display: none; /* Let jQuery handle showing/hiding */
     }
     
@@ -1550,7 +1541,7 @@ body{
         padding: 1rem 0; 
         display: block; /* Ensures mobile links are wide and easy to tap */
     }
-}
+
 /* =========================================
    VIDEO HERO SECTION (Left Aligned)
    ========================================= */

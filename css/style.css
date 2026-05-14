@@ -84,14 +84,35 @@ body { overflow-x: hidden; }
     transition: all 0.3s ease;
 }
 
+/* Base Logo Text & Image Locks */
+.header .logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    font-size: 2.2rem; 
+    font-weight: 600; 
+    color: var(--text-dark) !important; 
+    white-space: nowrap; 
+    text-decoration: none !important;
+}
+
+/* Bulletproof Image Sizing - Stops it from breaking the navbar */
+.header .logo img { 
+    height: 4.5rem !important; 
+    max-height: 45px !important; 
+    width: auto !important; 
+    object-fit: contain !important; /* Forces image to scale down */
+    flex-shrink: 0 !important; /* Prevents flexbox stretching */
+    display: block !important;
+}
+
 /* Hide the mobile logo on Desktop */
 .mobile-logo { display: none; } 
 
 /* Style the Desktop Center Logo */
 .desktop-logo { margin: 0 4rem !important; }
-.desktop-logo .logo { color: var(--text-dark) !important; font-size: 2.6rem; display: flex; align-items: center; gap: 1rem; font-weight: 600; }
-.desktop-logo .logo img { height: 4.5rem; width: auto; }
-.header .navbar ul li.desktop-logo a::after { display: none; }
+.desktop-logo .logo { font-size: 2.6rem; }
+.header .navbar ul li.desktop-logo a::after { display: none !important; }
 
 .header .navbar ul { list-style-type: none; display: flex; align-items: center; justify-content: space-around; margin-bottom: 0; }
 .header .navbar ul li { margin: 0 1.5rem; }
